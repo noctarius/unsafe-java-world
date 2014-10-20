@@ -43,7 +43,7 @@ public class BytecodeInstantiationHack
         mv.visitMethodInsn(INVOKESPECIAL, "java/lang/String", "<init>", "(Ljava/lang/String;)V");
         //
 
-        /*// Call to Object constructor Object()
+        /*/ Call to Object constructor Object()
         mv.visitInsn(DUP);
         mv.visitMethodInsn(INVOKESPECIAL, "java/lang/Object", "<init>", "()V");
         /*/
@@ -74,7 +74,7 @@ public class BytecodeInstantiationHack
 
         // Show content of the String instance
         System.out.println("Value before Field::set: " + valueField.get(foo));
-        System.out.println("Value before Field::set: " + foo);
+        //System.out.println("Value before Field::set: " + foo);
 
         // Rewrite the value to "Something"->char[]
         valueField.set(foo, "Something".toCharArray());

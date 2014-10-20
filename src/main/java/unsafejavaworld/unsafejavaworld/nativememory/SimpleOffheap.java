@@ -15,8 +15,11 @@ public class SimpleOffheap {
             UnsafeSupport.UNSAFE.putLong(address + i, i);
 
         // Read 1024 long values and make sure they are the same
-        for (int i = 0; i < 1024; i += 8)
-            assertEquals(UnsafeSupport.UNSAFE.getLong(address + i), i);
+        for (int i = 0; i < 102400; i += 8) {
+            long aLong = UnsafeSupport.UNSAFE.getLong(address + i);
+            assertEquals(aLong, i);
+            System.out.println(aLong);
+        }
 
         // Free allocates memory
         UnsafeSupport.UNSAFE.freeMemory(address);

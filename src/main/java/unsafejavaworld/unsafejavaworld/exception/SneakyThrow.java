@@ -4,18 +4,18 @@ import unsafejavaworld.unsafejavaworld.UnsafeSupport;
 
 public class SneakyThrow {
 
-    public static void main(String[] args) {
+    public static void main(String[] args){
         // Using sun.misc.Unsafe
         // unsafeThrow();
 
         // Using Thread.stop
-        // threadStop();
+        //threadStop();
 
         // Using Reflection
         // newInstance();
 
         // Using Generics
-        // genericRethrow();
+        // SneakyThrow.<RuntimeException> genericRethrow();
     }
 
     private static void unsafeThrow() {
